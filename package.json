@@ -1,0 +1,16 @@
+{
+  "name": "food-donation-management-system",
+  "version": "1.0.0",
+  "description": "Full-Stack Food Donation Management System connecting food providers with NGOs & orphanages.",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "seed": "npm --prefix server run seed",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
