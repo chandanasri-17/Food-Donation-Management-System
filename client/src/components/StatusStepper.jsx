@@ -45,9 +45,9 @@ const StatusStepper = ({ donation }) => {
     <div className="w-full py-4">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative">
         {/* Background connector line for desktop */}
-        <div className="hidden md:block absolute top-6 left-8 right-8 h-1 bg-slate-200 -z-0">
+        <div className="hidden md:block absolute top-6 left-8 right-8 h-1 bg-[#E8DFD5] -z-0">
           <div
-            className="h-full bg-emerald-500 transition-all duration-500"
+            className="h-full bg-[#5C4D43] transition-all duration-500"
             style={{
               width:
                 status === 'collected'
@@ -61,11 +61,11 @@ const StatusStepper = ({ donation }) => {
 
         {steps.map((step, idx) => {
           const Icon = step.icon;
-          let circleBg = 'bg-slate-100 text-slate-400 border-slate-300';
+          let circleBg = 'bg-[#FAF8F6] text-[#AD9C8E] border-[#E8DFD5]';
           if (step.isCompleted) {
-            circleBg = 'bg-emerald-600 text-white border-emerald-600 ring-4 ring-emerald-50';
+            circleBg = 'bg-[#5C4D43] text-[#F7E6CA] border-[#5C4D43] ring-4 ring-[#FAF3E8]';
           } else if (step.isActive) {
-            circleBg = 'bg-amber-500 text-white border-amber-500 ring-4 ring-amber-50';
+            circleBg = 'bg-[#F9F1EE] text-[#754034] border-[#D9BBB0] ring-4 ring-[#FAF3E8]';
           }
 
           return (
@@ -83,14 +83,14 @@ const StatusStepper = ({ donation }) => {
                 )}
               </div>
               <div>
-                <h4 className="font-semibold text-slate-800 text-sm md:text-base">
+                <h4 className="font-semibold text-[#2B2421] text-sm md:text-base">
                   {step.name}
                 </h4>
-                <p className="text-xs text-slate-500 max-w-[200px] mt-0.5">
+                <p className="text-xs text-[#706660] max-w-[200px] mt-0.5">
                   {step.description}
                 </p>
                 {step.date && (
-                  <span className="inline-block mt-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                  <span className="inline-block mt-1 text-[11px] font-medium text-[#5C4D43] bg-[#FAF3E8] border border-[#E8D59E]/40 px-2 py-0.5 rounded">
                     {step.date}
                   </span>
                 )}

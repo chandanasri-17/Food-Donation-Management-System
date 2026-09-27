@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white;
+    @apply bg-[#FDFBF7] text-[#2B2421] antialiased selection:bg-[#E8DFD5] selection:text-[#2B2421];
   }
 }
 
@@ -15,7 +15,7 @@
 
 .transition-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px -10px rgba(43, 36, 33, 0.07);
 }
 
 /* Subtle pulse for urgent expiry */
@@ -34,12 +34,12 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #FDFBF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #E8DFD5;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #AD9C8E;
 }

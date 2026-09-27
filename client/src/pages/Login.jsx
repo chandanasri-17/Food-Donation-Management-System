@@ -51,78 +51,78 @@ const Login = () => {
       <div className="w-full max-w-md space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-600 text-white shadow-md shadow-emerald-200">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#5C4D43] text-[#F7E6CA] shadow-sm">
             <UtensilsCrossed className="w-6 h-6" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#2B2421] tracking-tight">
             Welcome to FoodBridge
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-[#706660]">
             Sign in to post surplus meals or coordinate food collections
           </p>
         </div>
 
         {/* Demo Accounts Quick-Fill Box */}
-        <div className="bg-emerald-50/80 border border-emerald-200/80 rounded-2xl p-4 space-y-2.5">
-          <p className="text-xs font-bold text-emerald-900 flex items-center justify-between">
+        <div className="bg-[#FAF8F6] border border-[#E8DFD5] rounded-2xl p-4 space-y-2.5">
+          <p className="text-xs font-bold text-[#2B2421] flex items-center justify-between">
             <span>⚡ Instant Demo Accounts (1-Click Fill):</span>
-            <span className="text-[10px] text-emerald-700 font-normal">Pass: password123</span>
+            <span className="text-[10px] text-[#AD9C8E] font-normal">Pass: password123</span>
           </p>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <button
               type="button"
               onClick={() => handleDemoFill('hotel@demo.com')}
-              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-emerald-200 text-slate-700 hover:border-emerald-500 font-medium transition-colors text-left"
+              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-[#E8DFD5] text-[#706660] hover:border-[#AD9C8E] font-medium transition-colors text-left shadow-xs"
             >
-              <Building2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <Building2 className="w-4 h-4 text-[#5C4D43] shrink-0" />
               <div className="truncate">
-                <span className="block font-bold text-slate-900 truncate">Demo Hotel</span>
-                <span className="text-[10px] text-slate-500">Provider</span>
+                <span className="block font-bold text-[#2B2421] truncate">Demo Hotel</span>
+                <span className="text-[10px] text-[#AD9C8E]">Provider</span>
               </div>
             </button>
 
             <button
               type="button"
               onClick={() => handleDemoFill('orphanage@demo.com')}
-              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-emerald-200 text-slate-700 hover:border-emerald-500 font-medium transition-colors text-left"
+              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-[#E8DFD5] text-[#706660] hover:border-[#AD9C8E] font-medium transition-colors text-left shadow-xs"
             >
-              <HeartHandshake className="w-4 h-4 text-amber-600 shrink-0" />
+              <HeartHandshake className="w-4 h-4 text-[#8F5345] shrink-0" />
               <div className="truncate">
-                <span className="block font-bold text-slate-900 truncate">Demo Orphanage</span>
-                <span className="text-[10px] text-slate-500">NGO</span>
+                <span className="block font-bold text-[#2B2421] truncate">Demo Orphanage</span>
+                <span className="text-[10px] text-[#AD9C8E]">NGO</span>
               </div>
             </button>
 
             <button
               type="button"
               onClick={() => handleDemoFill('hostel@demo.com')}
-              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-emerald-200 text-slate-700 hover:border-emerald-500 font-medium transition-colors text-left"
+              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-[#E8DFD5] text-[#706660] hover:border-[#AD9C8E] font-medium transition-colors text-left shadow-xs"
             >
-              <Building2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <Building2 className="w-4 h-4 text-[#5C4D43] shrink-0" />
               <div className="truncate">
-                <span className="block font-bold text-slate-900 truncate">Demo Hostel Mess</span>
-                <span className="text-[10px] text-slate-500">Provider</span>
+                <span className="block font-bold text-[#2B2421] truncate">Demo Hostel Mess</span>
+                <span className="text-[10px] text-[#AD9C8E]">Provider</span>
               </div>
             </button>
 
             <button
               type="button"
               onClick={() => handleDemoFill('ngo@demo.com')}
-              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-emerald-200 text-slate-700 hover:border-emerald-500 font-medium transition-colors text-left"
+              className="flex items-center gap-1.5 p-2 rounded-xl bg-white border border-[#E8DFD5] text-[#706660] hover:border-[#AD9C8E] font-medium transition-colors text-left shadow-xs"
             >
-              <HeartHandshake className="w-4 h-4 text-amber-600 shrink-0" />
+              <HeartHandshake className="w-4 h-4 text-[#8F5345] shrink-0" />
               <div className="truncate">
-                <span className="block font-bold text-slate-900 truncate">Community NGO</span>
-                <span className="text-[10px] text-slate-500">NGO</span>
+                <span className="block font-bold text-[#2B2421] truncate">Community NGO</span>
+                <span className="text-[10px] text-[#AD9C8E]">NGO</span>
               </div>
             </button>
           </div>
         </div>
 
         {/* Login Form Card */}
-        <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+        <div className="bg-white p-8 rounded-3xl border border-[#E8DFD5] shadow-xs space-y-6">
           {errorMsg && (
-            <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+            <div className="p-3.5 rounded-xl bg-[#F9F1EE] border border-[#D9BBB0] text-[#754034] text-xs flex items-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -130,7 +130,7 @@ const Login = () => {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+              <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                 Email Address
               </label>
               <input
@@ -139,13 +139,13 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@organization.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-slate-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] focus:border-transparent transition-all placeholder:text-[#AD9C8E]"
               />
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide">
                   Password
                 </label>
               </div>
@@ -155,14 +155,14 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-slate-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] focus:border-transparent transition-all placeholder:text-[#AD9C8E]"
               />
             </div>
 
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3 px-4 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-200 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-3 px-4 rounded-xl text-sm font-bold text-white bg-[#5C4D43] hover:bg-[#483C34] shadow-xs transition-all flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {submitting ? (
                 <>
@@ -177,9 +177,9 @@ const Login = () => {
             </button>
           </form>
 
-          <div className="pt-4 border-t border-slate-100 text-center text-xs text-slate-500">
+          <div className="pt-4 border-t border-[#FAF8F6] text-center text-xs text-[#706660]">
             Don't have an account?{' '}
-            <Link to="/register" className="font-bold text-emerald-600 hover:text-emerald-700">
+            <Link to="/register" className="font-bold text-[#5C4D43] hover:text-[#2B2421]">
               Create an account
             </Link>
           </div>

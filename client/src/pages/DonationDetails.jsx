@@ -103,8 +103,8 @@ const DonationDetails = () => {
   if (loading) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3">
-        <div className="w-8 h-8 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin" />
-        <p className="text-sm text-slate-500">Loading donation details...</p>
+        <div className="w-8 h-8 border-4 border-[#5C4D43] border-t-transparent rounded-full animate-spin" />
+        <p className="text-sm text-[#706660]">Loading donation details...</p>
       </div>
     );
   }
@@ -112,12 +112,12 @@ const DonationDetails = () => {
   if (errorMsg || !donation) {
     return (
       <div className="max-w-2xl mx-auto py-16 px-4 text-center space-y-4">
-        <AlertCircle className="w-12 h-12 text-rose-500 mx-auto" />
-        <h2 className="text-xl font-bold text-slate-900">{errorMsg || 'Listing Not Found'}</h2>
-        <p className="text-xs text-slate-500">The food donation listing may have been removed or does not exist.</p>
+        <AlertCircle className="w-12 h-12 text-[#8F5345] mx-auto" />
+        <h2 className="text-xl font-bold text-[#2B2421]">{errorMsg || 'Listing Not Found'}</h2>
+        <p className="text-xs text-[#706660]">The food donation listing may have been removed or does not exist.</p>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded-xl"
+          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#5C4D43] bg-[#FAF3E8] border border-[#E8D59E]/40 rounded-xl"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Home
         </Link>
@@ -136,27 +136,27 @@ const DonationDetails = () => {
       <div>
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#706660] hover:text-[#2B2421] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" /> Go Back
         </button>
       </div>
 
       {/* Main Details Card */}
-      <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 sm:p-8 space-y-6">
+      <div className="bg-white rounded-3xl border border-[#E8DFD5] shadow-xs p-6 sm:p-8 space-y-6">
         {/* Top Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#FAF8F6] pb-5">
           <div className="space-y-1.5">
             <div className="flex flex-wrap items-center gap-2">
               <span className={`text-xs px-2.5 py-0.5 rounded-full font-semibold border ${dietary.badgeClass}`}>
                 {dietary.label}
               </span>
-              <span className="text-xs px-2.5 py-0.5 rounded-full font-medium bg-slate-100 text-slate-700">
+              <span className="text-xs px-2.5 py-0.5 rounded-full font-medium bg-[#FAF8F6] border border-[#E8DFD5] text-[#706660]">
                 {FOOD_TYPE_LABELS[donation.foodType] || 'Prepared Food'}
               </span>
               <StatusBadge status={donation.status} size="md" />
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2B2421]">
               {donation.title}
             </h1>
           </div>
@@ -169,8 +169,8 @@ const DonationDetails = () => {
         </div>
 
         {/* Status Stepper Progression */}
-        <div className="bg-slate-50/70 p-5 rounded-2xl border border-slate-100">
-          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+        <div className="bg-[#FAF8F6] p-5 rounded-2xl border border-[#E8DFD5]">
+          <h3 className="text-xs font-bold text-[#AD9C8E] uppercase tracking-wider mb-2">
             Rescue Progress Timeline
           </h3>
           <StatusStepper donation={donation} />
@@ -178,57 +178,57 @@ const DonationDetails = () => {
 
         {/* Food Specifications Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-            <span className="text-[10px] font-bold uppercase text-emerald-800 tracking-wider">Estimated Servings</span>
-            <p className="text-xl font-extrabold text-emerald-900 mt-1">~{donation.servingsApprox} People</p>
+          <div className="p-4 rounded-2xl bg-[#FAF3E8] border border-[#E8D59E]/60">
+            <span className="text-[10px] font-bold uppercase text-[#5C4D43] tracking-wider">Estimated Servings</span>
+            <p className="text-xl font-extrabold text-[#2B2421] mt-1">~{donation.servingsApprox} People</p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-amber-50/50 border border-amber-100">
-            <span className="text-[10px] font-bold uppercase text-amber-800 tracking-wider">Quantity</span>
-            <p className="text-lg font-bold text-amber-900 mt-1 truncate" title={donation.quantity}>{donation.quantity}</p>
+          <div className="p-4 rounded-2xl bg-[#FAF8F6] border border-[#E8DFD5]">
+            <span className="text-[10px] font-bold uppercase text-[#706660] tracking-wider">Quantity</span>
+            <p className="text-lg font-bold text-[#2B2421] mt-1 truncate" title={donation.quantity}>{donation.quantity}</p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-            <span className="text-[10px] font-bold uppercase text-slate-500 tracking-wider">Prepared Time</span>
-            <p className="text-xs font-bold text-slate-800 mt-1">{formatDate(donation.preparedAt)}</p>
+          <div className="p-4 rounded-2xl bg-[#FAF8F6] border border-[#E8DFD5]">
+            <span className="text-[10px] font-bold uppercase text-[#AD9C8E] tracking-wider">Prepared Time</span>
+            <p className="text-xs font-bold text-[#2B2421] mt-1">{formatDate(donation.preparedAt)}</p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-            <span className="text-[10px] font-bold uppercase text-slate-500 tracking-wider">Must Collect Before</span>
-            <p className="text-xs font-bold text-slate-800 mt-1">{formatDate(donation.expiryTime)}</p>
+          <div className="p-4 rounded-2xl bg-[#FAF8F6] border border-[#E8DFD5]">
+            <span className="text-[10px] font-bold uppercase text-[#AD9C8E] tracking-wider">Must Collect Before</span>
+            <p className="text-xs font-bold text-[#2B2421] mt-1">{formatDate(donation.expiryTime)}</p>
           </div>
         </div>
 
         {/* Split Info Cards: Provider and Pickup Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
           {/* Provider & Pickup Card */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4">
-            <div className="flex items-center gap-2 text-slate-900 font-bold text-base">
-              <Building className="w-5 h-5 text-emerald-600" />
+          <div className="p-6 rounded-2xl bg-[#FAF8F6] border border-[#E8DFD5] space-y-4">
+            <div className="flex items-center gap-2 text-[#2B2421] font-bold text-base">
+              <Building className="w-5 h-5 text-[#5C4D43]" />
               Food Provider & Pickup Location
             </div>
 
-            <div className="space-y-2 text-xs text-slate-700">
+            <div className="space-y-2 text-xs text-[#706660]">
               <p>
-                <strong className="text-slate-900">Establishment:</strong> {donation.provider?.name || 'Local Provider'}
+                <strong className="text-[#2B2421]">Establishment:</strong> {donation.provider?.name || 'Local Provider'}
               </p>
               <p>
-                <strong className="text-slate-900">Type:</strong> {ORG_TYPE_LABELS[donation.provider?.organizationType] || 'Food Provider'}
+                <strong className="text-[#2B2421]">Type:</strong> {ORG_TYPE_LABELS[donation.provider?.organizationType] || 'Food Provider'}
               </p>
               <p className="flex items-start gap-1.5 pt-1">
-                <MapPin className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#8F5345] shrink-0 mt-0.5" />
                 <span>
                   {donation.pickupAddress?.street ? `${donation.pickupAddress.street}, ` : ''}
-                  <strong>{donation.pickupAddress?.city}</strong>
+                  <strong className="text-[#2B2421]">{donation.pickupAddress?.city}</strong>
                   {donation.pickupAddress?.state ? `, ${donation.pickupAddress.state}` : ''}
                   {donation.pickupAddress?.pincode ? ` - ${donation.pickupAddress.pincode}` : ''}
                 </span>
               </p>
               <p className="flex items-center gap-1.5 pt-1">
-                <Phone className="w-4 h-4 text-emerald-600 shrink-0" />
+                <Phone className="w-4 h-4 text-[#5C4D43] shrink-0" />
                 <span>
-                  Contact: <strong>{donation.pickupAddress?.contactPerson || donation.provider?.name}</strong> (
-                  <a href={`tel:${donation.pickupAddress?.contactPhone}`} className="text-emerald-700 font-semibold hover:underline">
+                  Contact: <strong className="text-[#2B2421]">{donation.pickupAddress?.contactPerson || donation.provider?.name}</strong> (
+                  <a href={`tel:${donation.pickupAddress?.contactPhone}`} className="text-[#5C4D43] font-semibold hover:underline">
                     {donation.pickupAddress?.contactPhone}
                   </a>
                   )
@@ -237,9 +237,9 @@ const DonationDetails = () => {
             </div>
 
             {donation.specialInstructions && (
-              <div className="pt-3 border-t border-slate-200 text-xs">
-                <span className="font-bold text-slate-900 block mb-1">Pickup Instructions:</span>
-                <p className="text-slate-600 italic bg-white p-3 rounded-xl border border-slate-200">
+              <div className="pt-3 border-t border-[#E8DFD5] text-xs">
+                <span className="font-bold text-[#2B2421] block mb-1">Pickup Instructions:</span>
+                <p className="text-[#706660] italic bg-white p-3 rounded-xl border border-[#E8DFD5]">
                   "{donation.specialInstructions}"
                 </p>
               </div>
@@ -247,39 +247,39 @@ const DonationDetails = () => {
           </div>
 
           {/* Claimant / Status Card */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+          <div className="p-6 rounded-2xl bg-[#FAF8F6] border border-[#E8DFD5] space-y-4 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-slate-900 font-bold text-base mb-3">
-                <HandHeart className="w-5 h-5 text-amber-600" />
+              <div className="flex items-center gap-2 text-[#2B2421] font-bold text-base mb-3">
+                <HandHeart className="w-5 h-5 text-[#8F5345]" />
                 Collection & Claimant Status
               </div>
 
               {donation.status === 'available' ? (
-                <div className="p-5 bg-emerald-50/70 border border-emerald-200 rounded-xl text-xs space-y-2">
-                  <div className="flex items-center gap-2 font-bold text-emerald-800">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                <div className="p-5 bg-[#FAF5E8] border border-[#E8D59E] rounded-xl text-xs space-y-2">
+                  <div className="flex items-center gap-2 font-bold text-[#6B5728]">
+                    <span className="w-2 h-2 rounded-full bg-[#8C733E] animate-ping" />
                     Currently Available for Pickup
                   </div>
-                  <p className="text-emerald-900">
+                  <p className="text-[#6B5728]/90">
                     Any verified NGO or orphanage can accept this food immediately. Once accepted,
                     contact details are shared to coordinate the physical collection.
                   </p>
                 </div>
               ) : donation.claimedBy ? (
-                <div className="p-4 bg-white border border-amber-300 rounded-xl text-xs space-y-2">
-                  <div className="flex items-center gap-2 font-bold text-amber-900">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
+                <div className="p-4 bg-white border border-[#D9BBB0] rounded-xl text-xs space-y-2">
+                  <div className="flex items-center gap-2 font-bold text-[#754034]">
+                    <CheckCircle2 className="w-4 h-4 text-[#8F5345]" />
                     Accepted by {donation.claimedBy.name}
                   </div>
-                  <p className="text-slate-600">
+                  <p className="text-[#706660]">
                     <strong>Accepted on:</strong> {formatDate(donation.acceptedAt)}
                   </p>
-                  <p className="text-slate-600 flex items-center gap-1.5">
-                    <Phone className="w-3.5 h-3.5 text-emerald-600" />
-                    Claimant Contact: <a href={`tel:${donation.claimedBy.phone}`} className="font-semibold text-emerald-700 hover:underline">{donation.claimedBy.phone}</a>
+                  <p className="text-[#706660] flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5 text-[#5C4D43]" />
+                    Claimant Contact: <a href={`tel:${donation.claimedBy.phone}`} className="font-semibold text-[#5C4D43] hover:underline">{donation.claimedBy.phone}</a>
                   </p>
                   {donation.status === 'collected' && (
-                    <p className="text-blue-700 font-bold pt-1">
+                    <p className="text-[#5C4D43] font-bold pt-1">
                       ✅ Handover Completed on {formatDate(donation.collectedAt)}
                     </p>
                   )}
@@ -288,15 +288,15 @@ const DonationDetails = () => {
             </div>
 
             {/* Bottom Actions based on Role */}
-            <div className="pt-4 border-t border-slate-200 space-y-2">
+            <div className="pt-4 border-t border-[#E8DFD5] space-y-2">
               {/* If NGO and food is available */}
               {isNgo && donation.status === 'available' && !expiry.isExpired && (
                 <button
                   onClick={() => setClaimModalOpen(true)}
                   disabled={actionLoading}
-                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-200 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#5C4D43] hover:bg-[#483C34] shadow-xs transition-all flex items-center justify-center gap-2"
                 >
-                  <HandHeart className="w-4 h-4" />
+                  <HandHeart className="w-4 h-4 text-[#F7E6CA]" />
                   Accept This Food For Collection
                 </button>
               )}
@@ -306,9 +306,9 @@ const DonationDetails = () => {
                 <button
                   onClick={handleMarkCollected}
                   disabled={actionLoading}
-                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-200 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#5C4D43] hover:bg-[#483C34] shadow-xs transition-all flex items-center justify-center gap-2"
                 >
-                  <CheckCircle2 className="w-4 h-4" />
+                  <CheckCircle2 className="w-4 h-4 text-[#F7E6CA]" />
                   Confirm Handover & Mark as Collected
                 </button>
               )}
@@ -318,7 +318,7 @@ const DonationDetails = () => {
                 <button
                   onClick={handleDelete}
                   disabled={actionLoading}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 border border-rose-200 transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-[#8F5345] hover:bg-[#F9F1EE] border border-[#D9BBB0] transition-colors flex items-center justify-center gap-2"
                 >
                   <Trash2 className="w-4 h-4" />
                   Cancel / Remove Listing
@@ -328,7 +328,7 @@ const DonationDetails = () => {
               {!isAuthenticated && donation.status === 'available' && (
                 <Link
                   to="/login"
-                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 text-center block"
+                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#5C4D43] hover:bg-[#483C34] text-center block"
                 >
                   Log in as NGO to Accept Food
                 </Link>
@@ -345,29 +345,29 @@ const DonationDetails = () => {
         title="Confirm Surplus Food Acceptance"
       >
         <div className="space-y-4 text-xs">
-          <p className="text-slate-600">
+          <p className="text-[#706660]">
             Please confirm that your organization has transport and containers ready to collect{' '}
-            <strong>"{donation.title}"</strong> before{' '}
-            <strong>{formatDate(donation.expiryTime)}</strong>.
+            <strong className="text-[#2B2421]">"{donation.title}"</strong> before{' '}
+            <strong className="text-[#2B2421]">{formatDate(donation.expiryTime)}</strong>.
           </p>
 
-          <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1">
-            <p><strong>Quantity:</strong> {donation.quantity}</p>
-            <p><strong>Pickup City:</strong> {donation.pickupAddress?.city}</p>
-            <p><strong>Provider:</strong> {donation.provider?.name} ({donation.pickupAddress?.contactPhone})</p>
+          <div className="bg-[#FAF8F6] p-3.5 rounded-xl border border-[#E8DFD5] space-y-1 text-[#706660]">
+            <p><strong className="text-[#2B2421]">Quantity:</strong> {donation.quantity}</p>
+            <p><strong className="text-[#2B2421]">Pickup City:</strong> {donation.pickupAddress?.city}</p>
+            <p><strong className="text-[#2B2421]">Provider:</strong> {donation.provider?.name} ({donation.pickupAddress?.contactPhone})</p>
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-2">
             <button
               onClick={() => setClaimModalOpen(false)}
-              className="px-4 py-2 font-semibold text-slate-600 hover:bg-slate-100 rounded-xl"
+              className="px-4 py-2 font-semibold text-[#706660] hover:bg-[#FAF8F6] rounded-xl transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={handleAcceptDonation}
               disabled={actionLoading}
-              className="px-4 py-2 font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-sm disabled:opacity-50"
+              className="px-4 py-2 font-bold text-white bg-[#5C4D43] hover:bg-[#483C34] rounded-xl shadow-xs disabled:opacity-50 transition-colors"
             >
               {actionLoading ? 'Accepting...' : 'Yes, Accept Food'}
             </button>

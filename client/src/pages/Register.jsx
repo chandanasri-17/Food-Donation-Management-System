@@ -107,29 +107,29 @@ const Register = () => {
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-600 text-white shadow-md shadow-emerald-200">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#5C4D43] text-[#F7E6CA] shadow-sm">
             <UtensilsCrossed className="w-6 h-6" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#2B2421] tracking-tight">
             Join the FoodBridge Network
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-[#706660]">
             Register your organization to start donating or receiving surplus food
           </p>
         </div>
 
         {/* Role Selection Tabs */}
-        <div className="grid grid-cols-2 gap-3 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+        <div className="grid grid-cols-2 gap-3 p-1.5 bg-[#FAF8F6] rounded-2xl border border-[#E8DFD5]">
           <button
             type="button"
             onClick={() => handleRoleChange('provider')}
             className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all ${
               role === 'provider'
-                ? 'bg-white text-emerald-800 shadow-sm border border-slate-200'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-white text-[#5C4D43] shadow-xs border border-[#E8DFD5]'
+                : 'text-[#706660] hover:text-[#2B2421]'
             }`}
           >
-            <Building2 className={`w-4 h-4 ${role === 'provider' ? 'text-emerald-600' : 'text-slate-400'}`} />
+            <Building2 className={`w-4 h-4 ${role === 'provider' ? 'text-[#5C4D43]' : 'text-[#AD9C8E]'}`} />
             Food Provider (Hotel/Hostel/Stall)
           </button>
 
@@ -138,19 +138,19 @@ const Register = () => {
             onClick={() => handleRoleChange('ngo')}
             className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all ${
               role === 'ngo'
-                ? 'bg-white text-amber-800 shadow-sm border border-slate-200'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-white text-[#5C4D43] shadow-xs border border-[#E8DFD5]'
+                : 'text-[#706660] hover:text-[#2B2421]'
             }`}
           >
-            <HeartHandshake className={`w-4 h-4 ${role === 'ngo' ? 'text-amber-600' : 'text-slate-400'}`} />
+            <HeartHandshake className={`w-4 h-4 ${role === 'ngo' ? 'text-[#8F5345]' : 'text-[#AD9C8E]'}`} />
             NGO / Orphanage / Shelter
           </button>
         </div>
 
         {/* Form Container */}
-        <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+        <div className="bg-white p-8 rounded-3xl border border-[#E8DFD5] shadow-xs space-y-6">
           {errorMsg && (
-            <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+            <div className="p-3.5 rounded-xl bg-[#F9F1EE] border border-[#D9BBB0] text-[#754034] text-xs flex items-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -159,7 +159,7 @@ const Register = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                   {role === 'provider' ? 'Establishment / Hotel Name *' : 'NGO / Orphanage Name *'}
                 </label>
                 <input
@@ -169,19 +169,19 @@ const Register = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={role === 'provider' ? 'e.g. Grand Palace Hotel' : 'e.g. Hope Children Home'}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                   Organization Type *
                 </label>
                 <select
                   name="organizationType"
                   value={formData.organizationType}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] bg-white"
                 >
                   {role === 'provider' ? (
                     <>
@@ -206,7 +206,7 @@ const Register = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                   Official Email *
                 </label>
                 <input
@@ -216,12 +216,12 @@ const Register = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="contact@organization.org"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                   Contact Phone Number *
                 </label>
                 <input
@@ -231,14 +231,14 @@ const Register = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+91 98765 43210"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                   Password (min 6 characters) *
                 </label>
                 <input
@@ -248,12 +248,12 @@ const Register = () => {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                   Confirm Password *
                 </label>
                 <input
@@ -263,14 +263,14 @@ const Register = () => {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                 />
               </div>
             </div>
 
             {/* Address fields */}
             <div className="pt-2">
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+              <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                 {role === 'provider' ? 'Pickup Address / Location *' : 'Facility Location *'}
               </label>
               <div className="space-y-2">
@@ -280,7 +280,7 @@ const Register = () => {
                   value={formData.street}
                   onChange={handleChange}
                   placeholder="Street / Building / Gate No."
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                 />
                 <div className="grid grid-cols-3 gap-2">
                   <input
@@ -290,7 +290,7 @@ const Register = () => {
                     value={formData.city}
                     onChange={handleChange}
                     placeholder="City *"
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                   />
                   <input
                     type="text"
@@ -298,7 +298,7 @@ const Register = () => {
                     value={formData.state}
                     onChange={handleChange}
                     placeholder="State"
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                   />
                   <input
                     type="text"
@@ -306,14 +306,14 @@ const Register = () => {
                     value={formData.pincode}
                     onChange={handleChange}
                     placeholder="Pincode"
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3 py-2 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
                   />
                 </div>
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+              <label className="block text-xs font-bold text-[#706660] uppercase tracking-wide mb-1.5">
                 Brief Bio / Mission (Optional)
               </label>
               <textarea
@@ -322,14 +322,14 @@ const Register = () => {
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="e.g. 5-star hotel committed to zero food waste; or shelter providing daily care to 80 kids."
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-4 py-2.5 rounded-xl border border-[#E8DFD5] text-[#2B2421] text-sm focus:outline-none focus:ring-2 focus:ring-[#AD9C8E] placeholder:text-[#AD9C8E]"
               />
             </div>
 
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3.5 px-4 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-200 transition-all flex items-center justify-center gap-2 disabled:opacity-50 mt-4"
+              className="w-full py-3.5 px-4 rounded-xl text-sm font-bold text-white bg-[#5C4D43] hover:bg-[#483C34] shadow-xs transition-all flex items-center justify-center gap-2 disabled:opacity-50 mt-4"
             >
               {submitting ? (
                 <>
@@ -344,9 +344,9 @@ const Register = () => {
             </button>
           </form>
 
-          <div className="pt-4 border-t border-slate-100 text-center text-xs text-slate-500">
+          <div className="pt-4 border-t border-[#FAF8F6] text-center text-xs text-[#706660]">
             Already have an account?{' '}
-            <Link to="/login" className="font-bold text-emerald-600 hover:text-emerald-700">
+            <Link to="/login" className="font-bold text-[#5C4D43] hover:text-[#2B2421]">
               Sign In
             </Link>
           </div>

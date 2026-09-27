@@ -35,7 +35,7 @@ export const getExpiryStatus = (expiryDate) => {
       text: 'Expired',
       isExpired: true,
       isUrgent: false,
-      color: 'text-rose-600 bg-rose-50 border-rose-200',
+      color: 'text-rose-800 bg-rose-100 border-rose-200',
     };
   }
 
@@ -47,7 +47,7 @@ export const getExpiryStatus = (expiryDate) => {
       text: `Collect within ${diffHours > 0 ? `${diffHours}h ` : ''}${diffMinutes}m!`,
       isExpired: false,
       isUrgent: true,
-      color: 'text-amber-700 bg-amber-50 border-amber-300 animate-urgent',
+      color: 'text-rose-800 bg-rose-100 border-rose-200 animate-urgent',
     };
   }
 
@@ -56,7 +56,7 @@ export const getExpiryStatus = (expiryDate) => {
       text: `Safe for ~${diffHours} hours`,
       isExpired: false,
       isUrgent: false,
-      color: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+      color: 'text-gold-800 bg-gold-100 border-gold-200',
     };
   }
 
@@ -65,7 +65,7 @@ export const getExpiryStatus = (expiryDate) => {
     text: `Safe for ~${diffDays} day${diffDays > 1 ? 's' : ''}`,
     isExpired: false,
     isUrgent: false,
-    color: 'text-slate-700 bg-slate-100 border-slate-200',
+    color: 'text-taupe-700 bg-taupe-100 border-taupe-200',
   };
 };
 
@@ -80,10 +80,10 @@ export const FOOD_TYPE_LABELS = {
 };
 
 export const DIETARY_LABELS = {
-  vegetarian: { label: 'Veg', badgeClass: 'bg-green-100 text-green-800 border-green-300' },
-  'non-vegetarian': { label: 'Non-Veg', badgeClass: 'bg-red-100 text-red-800 border-red-300' },
-  vegan: { label: 'Vegan', badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300' },
-  mixed: { label: 'Mixed', badgeClass: 'bg-amber-100 text-amber-800 border-amber-300' },
+  vegetarian: { label: 'Veg', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+  'non-vegetarian': { label: 'Non-Veg', badgeClass: 'bg-rose-50 text-rose-700 border-rose-200' },
+  vegan: { label: 'Vegan', badgeClass: 'bg-teal-50 text-teal-700 border-teal-200' },
+  mixed: { label: 'Mixed', badgeClass: 'bg-amber-50 text-amber-700 border-amber-200' },
 };
 
 export const ORG_TYPE_LABELS = {

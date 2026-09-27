@@ -10,8 +10,8 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   if (loading) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3">
-        <Loader2 className="w-8 h-8 text-emerald-600 animate-spin" />
-        <p className="text-sm font-medium text-slate-500">Checking authorization...</p>
+        <Loader2 className="w-8 h-8 text-[#5C4D43] animate-spin" />
+        <p className="text-sm font-medium text-[#706660]">Checking authorization...</p>
       </div>
     );
   }
