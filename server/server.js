@@ -41,15 +41,28 @@ app.use('/api/donations', require('./routes/donationRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
 
 const path = require('path');
+const fs = require('fs');
 
-// Serve frontend in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
+// Production / Static File Handling
+const clientDistPath = path.join(__dirname, '../client/dist');
+const clientIndexHtml = path.join(clientDistPath, 'index.html');
+
+if (fs.existsSync(clientIndexHtml)) {
+  // Serve built frontend if dist directory exists
+  app.use(express.static(clientDistPath));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'));
+    res.sendFile(clientIndexHtml);
   });
 } else {
-  // 404 handler for undefined API routes in development
+  // Standalone API Mode (e.g. Render backend with frontend on Vercel)
+  app.get('/', (req, res) => {
+    res.status(200).json({
+      status: 'online',
+      message: 'Food Donation Management System API',
+    });
+  });
+
+  // 404 handler for undefined routes
   app.use('*', (req, res) => {
     res.status(404).json({
       success: false,
